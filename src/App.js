@@ -1,11 +1,19 @@
 import React from 'react';
-import Component_test from './Component_test';
+
+function Food({fav}) {
+  return (
+    <h3>I like {fav}</h3>
+  ); 
+}
 
 function App() {
   return (
     <div>
     <h1>Hello!</h1>
-    <Component_test />
+    <Food fav="kimchi" />
+    <Food fav="ramen" />
+    <Food fav="samgiopsal" />
+    <Food fav="chukumi" />
   </div>
   );
 }
