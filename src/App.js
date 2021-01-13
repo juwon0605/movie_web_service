@@ -5,8 +5,14 @@ class App extends React.Component {
   state = {
     count: 0
   };
-  add = () => {this.state.count += 1;};
-  minus = () => {this.state.count -= 1;};
+  add = () => {
+    this.setState(current => { return current.count += 1 }); // 이런 의미인데 아래와 같이 객체를 return하게끔 코딩.
+                                                             // 변수 하나 return하면 하나밖에 return 못함.
+  };
+  minus = () => {
+    this.setState(current => ({ count: current.count -1 }));  // { count: current.count -1 }이라는 객체를 return하기 위해 ()로 감쌈. (문법)
+                                                              // 객체로 return해야 여러게 setState()가능
+  };
   render() {
     return (
       <div>
